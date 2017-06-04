@@ -13,6 +13,9 @@
 		85F318361EE4334F004EDB15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F318351EE4334F004EDB15 /* Images.xcassets */; };
 		85F318391EE4334F004EDB15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85F318371EE4334F004EDB15 /* LaunchScreen.xib */; };
 		85F318451EE4334F004EDB15 /* Ejercicio01Modulo4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F318441EE4334F004EDB15 /* Ejercicio01Modulo4Tests.swift */; };
+		85F318501EE433BB004EDB15 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F3184E1EE433BB004EDB15 /* libsqlite3.0.dylib */; };
+		85F318511EE433BB004EDB15 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F3184F1EE433BB004EDB15 /* libsqlite3.dylib */; };
+		85F318531EE434B2004EDB15 /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F318521EE434B2004EDB15 /* SwiftData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 		85F3183E1EE4334F004EDB15 /* Ejercicio01Modulo4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ejercicio01Modulo4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F318431EE4334F004EDB15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F318441EE4334F004EDB15 /* Ejercicio01Modulo4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejercicio01Modulo4Tests.swift; sourceTree = "<group>"; };
+		85F3184E1EE433BB004EDB15 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		85F3184F1EE433BB004EDB15 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		85F318521EE434B2004EDB15 /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
+		85F318541EE43519004EDB15 /* Ejercicio01Modulo4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ejercicio01Modulo4-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F318501EE433BB004EDB15 /* libsqlite3.0.dylib in Frameworks */,
+				85F318511EE433BB004EDB15 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +68,12 @@
 		85F318201EE4334E004EDB15 = {
 			isa = PBXGroup;
 			children = (
+				85F3184E1EE433BB004EDB15 /* libsqlite3.0.dylib */,
+				85F3184F1EE433BB004EDB15 /* libsqlite3.dylib */,
 				85F3182B1EE4334E004EDB15 /* Ejercicio01Modulo4 */,
 				85F318411EE4334F004EDB15 /* Ejercicio01Modulo4Tests */,
 				85F3182A1EE4334E004EDB15 /* Products */,
+				85F3182C1EE4334E004EDB15 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +92,10 @@
 				85F3182E1EE4334F004EDB15 /* AppDelegate.swift */,
 				85F318301EE4334F004EDB15 /* ViewController.swift */,
 				85F318321EE4334F004EDB15 /* Main.storyboard */,
+				85F318521EE434B2004EDB15 /* SwiftData.swift */,
 				85F318351EE4334F004EDB15 /* Images.xcassets */,
 				85F318371EE4334F004EDB15 /* LaunchScreen.xib */,
-				85F3182C1EE4334E004EDB15 /* Supporting Files */,
+				85F318541EE43519004EDB15 /* Ejercicio01Modulo4-Bridging-Header.h */,
 			);
 			path = Ejercicio01Modulo4;
 			sourceTree = "<group>";
@@ -93,6 +106,7 @@
 				85F3182D1EE4334E004EDB15 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = Ejercicio01Modulo4;
 			sourceTree = "<group>";
 		};
 		85F318411EE4334F004EDB15 /* Ejercicio01Modulo4Tests */ = {
@@ -213,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85F318311EE4334F004EDB15 /* ViewController.swift in Sources */,
+				85F318531EE434B2004EDB15 /* SwiftData.swift in Sources */,
 				85F3182F1EE4334F004EDB15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,9 +355,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Ejercicio01Modulo4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ejercicio01Modulo4/Ejercicio01Modulo4-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -350,9 +369,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Ejercicio01Modulo4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ejercicio01Modulo4/Ejercicio01Modulo4-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
