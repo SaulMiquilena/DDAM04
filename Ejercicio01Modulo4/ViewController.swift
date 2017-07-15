@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         self.err = err1
         if contains(tables, "usuarios") {
             //Eliminando la tabla usuarios en la BD SwiftData.sqlite
-            self.err = SD.deleteTable("usuarios")
-            println("Existe la tabla usuarios en la BD SwiftData.sqlite")
+            //self.err = SD.deleteTable("usuarios")
+            //println("Existe la tabla usuarios en la BD SwiftData.sqlite")
             
             //Buscando a usuario recordado
             //println("Buscando a usuario recordado")
@@ -85,22 +85,19 @@ class ViewController: UIViewController {
     @IBAction func btnIngresar(sender: AnyObject) {
         //Validando Usuario
         println("Buscando a el Usuario")
-        let (resulset, err2) = SD.executeQuery("SELECT usuario, clave FROM usuarios WHERE usuario = ? AND clave = ? LIMIT 1", withArgs: [txtUsuario.text, txtClave.text])
-        self.err = err2
-        if err != nil {
-            let errMsg = SD.errorMessageForCode(self.err!)
-            println("Error buscando en la BD SwiftData.sqlite: "+errMsg)
-        } else {
-            //Recorremos el Resulset
-            for row in resulset {
-                let valor_usuario = row["usuario"]?.asString()!
-                let valor_clave = row["clave"]?.asString()!
-                
-                self.valorusuario = valor_usuario!
-                self.valorclave = valor_clave!
-            }
+        
+        var url : String = "http://localhost/servidor-restful/Despachador.php?servicio=1&usuario="+txtUsuario.text+"&clave="+txtClave.text
+        
+        var endpoint = NSURL(string: url)
+        var data = NSData(contentsOfURL: endpoint!)
+        var parseError: NSError?
+        
+        if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+            println("Consumiendo el Servicio=1")
+            let usuario = json["usuario"] as? NSString
+            let clave = json["clave"] as? NSString
             
-            if self.valorusuario == nil && self.valorclave == nil {
+            if usuario == nil && clave == nil {
                 mensaje(msgError);
             } else {
                 let bienvenido = "Bienvenido"
@@ -125,6 +122,9 @@ class ViewController: UIViewController {
                     }
                 }
             }
+            
+        } else {
+            println("El Usuario no se encuentra registrado")
         }
     }
     
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
         let msgA = msg
         //Creamos la ventana Alert //Instaciamos la clase UIAlertController
         let alertController = UIAlertController(title: "Mensaje", message: msgA, preferredStyle: .Alert)
-                
+        
         //Definimos la acción para el botón Cancelar de la ventana Alert
         let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel) { (action:UIAlertAction!) in
             println("CANCELAR: Limpiar los datos");
@@ -157,10 +157,10 @@ class ViewController: UIViewController {
             self.txtClave.text = "";
             self.mySwitch.setOn(false, animated: true);
         }
-                
+        
         //Adicionamos la acción cancelAction
         alertController.addAction(cancelAction)
-                
+        
         //Definimos la acción para el botón OK de la ventana Alert
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
             println("OK: Muy bien");
@@ -168,14 +168,13 @@ class ViewController: UIViewController {
             self.txtClave.text = "";
             self.mySwitch.setOn(false, animated: true);
         }
-                
+        
         //Adicionamos la acción OKAction
         alertController.addAction(OKAction)
-            
+        
         //Mostramos la ventana de Alert
         self.presentViewController(alertController, animated: true, completion:nil)
     }
-    
 }
 
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1AF97A3F-4116-4BFA-AB60-221010C5B9F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Ejercicio01Modulo4</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7F58AC27BA9D19781876411CAC31E0AF5B6C2F5F</key>
+		<string>github.com:SaulMiquilena/DDAM03.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Ejercicio01Modulo4.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7F58AC27BA9D19781876411CAC31E0AF5B6C2F5F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:SaulMiquilena/DDAM03.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7F58AC27BA9D19781876411CAC31E0AF5B6C2F5F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7F58AC27BA9D19781876411CAC31E0AF5B6C2F5F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EjercicioFINALModulo4</string>
+		</dict>
+	</array>
+</dict>
+</plist>
